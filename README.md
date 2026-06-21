@@ -38,10 +38,9 @@ The synthetic assets were preprocessed inside Google Colab to conform directly t
 
 1.  **Drive Synchronization:** Mounted Google Drive to ingest the synthetic dataset repository into a local Pandas DataFrame for tracking.
 2.  **Coordinate Rectification:** Corrected an inverted vertical Y-axis drift in the original labels to align coordinates with standard top-down image pixel configurations.
-3.  **Storage I/O Optimization:** Avoided Google Drive filesystem symbolic link limitations (`OSError: Operation not supported`) by shifting all 7,000 baseline source images directly into a temporary local high-speed directory on the native Colab virtual instance.
-4.  **Train-Test Split Partitioning:** Segmented unique rendering entries into an $80\% / 20\%$ stratified validation split using a fixed random seed.
-5.  **Bounding Box Conversion:** Transformed normalized coordinates ($\text{xmin}, \text{ymin}, \text{xmax}, \text{ymax}$) into standard YOLO coordinates: center coordinates ($\text{x}, \text{y}$) and dimensional scales ($\text{width}, \text{height}$).
-6.  **YOLO Formatting Output:** Generated a companion text file configuration for each frame entry containing unified bounding box entries alongside a structured `data.yaml` layout definition file pointing directly to class labels.
+3.  **Train-Test Split Partitioning:** Segmented unique rendering entries into an $80\% / 20\%$ stratified validation split using a fixed random seed.
+4.  **Bounding Box Conversion:** Transformed normalized coordinates ($\text{xmin}, \text{ymin}, \text{xmax}, \text{ymax}$) into standard YOLO coordinates: center coordinates ($\text{x}, \text{y}$) and dimensional scales ($\text{width}, \text{height}$).
+5.  **YOLO Formatting Output:** Generated a companion text file configuration for each frame entry containing unified bounding box entries alongside a structured `data.yaml` layout definition file pointing directly to class labels.
 
 ---
 
